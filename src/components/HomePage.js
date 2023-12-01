@@ -1,38 +1,30 @@
 import React from 'react';
 import { Amplify } from 'aws-amplify';
-import { Authenticator } from '@aws-amplify/ui-react';
-import config from '../amplifyconfiguration.json'
+import { Authenticator, Button } from '@aws-amplify/ui-react';
+import awsExports from '../aws-exports'
 import '@aws-amplify/ui-react/styles.css'
 
-Amplify.configure({
-  Auth: {
-    region: config.REGION,
-    userPoolId: config.USER_POOL_ID,
-    userPoolWebClientId: config.USER_POOL_CLIENT_ID
-  }
-})
-
-const formFields = {
-  signIn: {
-    username: {
-      placeholder: 'Enter Your Email Here',
-      isRequired: true,
-      label: 'Email:'
-    },
-  },
-}
+Amplify.configure(awsExports)
 
 const HomePage = () => {
   return (
     <Authenticator
       variation="modal"
       hideSignUp={true}
-      formFields={formFields}
     >
       {({ signOut, user }) => (
-        <div>
-          <h1>Hello {user.userId}</h1>
-          <button onClick={signOut}>Sign out</button>
+        <div
+        style={{
+          backgroundColor: 'grey',
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '100vh',
+          alignItems: 'center',
+          gap: 50,
+        }}
+      >
+          <h1 style={{marginTop: 200}}>Hello {user.username} (userId: {user.userId})!</h1>
+          <Button onClick={signOut}style={{ backgroundColor: 'rgb(13, 123, 148)', color: 'white' }}>👋 Sign out</Button>
         </div>
       )}
     </Authenticator>

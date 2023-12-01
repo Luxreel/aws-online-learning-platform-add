@@ -10,6 +10,11 @@
       "StackName": "amplify-onlinelearningapp-dev-02354",
       "StackId": "arn:aws:cloudformation:eu-west-3:887379157804:stack/amplify-onlinelearningapp-dev-02354/87cd3fa0-8fd7-11ee-af48-0e4125546dca",
       "AmplifyAppId": "d3jo1g0jvj86sx"
+    },
+    "categories": {
+      "auth": {
+        "onlinelearningappe97d2d1c": {}
+      }
     }
   }
 }
