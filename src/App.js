@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import GuestPage from './components/GuestPage';
-import HomePage from './components/HomePage';
+import GuestPage from './views/GuestPage';
+import HomePage from './views/HomePage';
 
 const App = () => {
   return (
