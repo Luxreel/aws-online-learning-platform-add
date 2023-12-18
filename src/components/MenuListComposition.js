@@ -4,7 +4,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 
-export default function MenuPopupState(props) {
+export default function MenuPopupState({ user, signOut }) {
   function stringToColor(string) {
     let hash = 0;
     let i;
@@ -40,12 +40,12 @@ export default function MenuPopupState(props) {
           <div
             {...bindTrigger(popupState)}
             style={{ cursor: 'pointer' }}>
-            <Avatar {...stringAvatar(props.user.username)}/>
+            <Avatar {...stringAvatar(user.username)}/>
           </div>  
           <Menu {...bindMenu(popupState)}>
             <MenuItem onClick={popupState.close}>Profile</MenuItem>
             <MenuItem onClick={popupState.close}>My account</MenuItem>
-            <MenuItem onClick={popupState.close}>Logout</MenuItem>
+            <MenuItem onClick={signOut}>👋 Sign out</MenuItem>
           </Menu>
         </React.Fragment>
       )}

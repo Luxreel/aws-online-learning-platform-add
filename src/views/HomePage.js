@@ -1,6 +1,6 @@
 import React from 'react';
 import { Amplify } from 'aws-amplify';
-import { Authenticator, Button } from '@aws-amplify/ui-react';
+import { Authenticator } from '@aws-amplify/ui-react';
 import awsExports from '../aws-exports'
 import '@aws-amplify/ui-react/styles.css'
 import TopBar from '../components/TopBar';
@@ -19,7 +19,7 @@ const HomePage = () => {
           flexDirection: 'column',
           height: '100vh'
         }}>
-          <TopBar user={user} />
+          <TopBar user={user} signOut={signOut}/>
           {/* Rest of the page*/}
           <div style={{
             display: 'flex',
@@ -30,7 +30,6 @@ const HomePage = () => {
             gap: 50,
           }}>
               <div style={{marginTop: 200, justifyContent: 'center'}}>Hello {user.username} (userId: {user.userId})!</div>
-              <Button onClick={signOut}style={{ backgroundColor: 'rgb(13, 123, 148)', color: 'white' }}>👋 Sign out</Button>
           </div>
         </div>
       )}

@@ -2,7 +2,7 @@ import React from 'react';
 import TemporaryDrawer from './TemporaryDrawer';
 import MenuListComposition from './MenuListComposition';
 
-export default function TopBar({ user }) {
+export default function TopBar({ user, signOut }) {
   return (
     <div style={{
       display: 'flex',
@@ -34,7 +34,7 @@ export default function TopBar({ user }) {
         />
       </div>
       <div>
-        <MenuListComposition user={user} />
+        <MenuListComposition user={user} signOut={signOut} />
       </div>
     </div>
   );
