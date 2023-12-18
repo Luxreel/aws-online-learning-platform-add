@@ -8,10 +8,15 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import HomeIcon from '@mui/icons-material/Home';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
+import { Divider } from '@mui/material';
 
-export default function TemporaryDrawer() {
+export default function TemporaryDrawer({ signOut }) {
   const [state, setState] = React.useState({
     left: false
   });
@@ -32,16 +37,61 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        {/* Item 1 */}
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText primary={'Home'} />
+          </ListItemButton>
+        </ListItem>
+        {/* Item 2 */}
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <NotificationsActiveIcon />
+            </ListItemIcon>
+            <ListItemText primary={'Notifications'} />
+          </ListItemButton>
+        </ListItem>
+        {/* Item 3 */}
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <MenuBookIcon />
+            </ListItemIcon>
+            <ListItemText primary={'Course Catalog'} />
+          </ListItemButton>
+        </ListItem>
+        {/* Item 4 */}
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <QuestionAnswerIcon />
+            </ListItemIcon>
+            <ListItemText primary={'Discussion Forums'} />
+          </ListItemButton>
+        </ListItem>
+        {/* Item 5 */}
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <PermContactCalendarIcon />
+            </ListItemIcon>
+            <ListItemText primary={'Contact'} />
+          </ListItemButton>
+        </ListItem>
+        <Divider />
+        {/* Sign out */}
+        <ListItem disablePadding onClick={signOut}>
+          <ListItemButton onClick={() => signOut}>
+            <ListItemIcon>
+              <PowerSettingsNewIcon />
+            </ListItemIcon>
+            <ListItemText primary={'Sign out'} />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );

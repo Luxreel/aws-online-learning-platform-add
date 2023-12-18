@@ -1,6 +1,6 @@
 import React from 'react';
 import TemporaryDrawer from './TemporaryDrawer';
-import MenuListComposition from './MenuListComposition';
+import MenuPopupState from './MenuPopupState';
 
 export default function TopBar({ user, signOut }) {
   return (
@@ -25,7 +25,7 @@ export default function TopBar({ user, signOut }) {
         gap: '10px',
         alignItems: 'center'
       }}>
-        <TemporaryDrawer />
+        <TemporaryDrawer signOut={signOut}/>
         <img
           src='/woodle-logo.png'
           alt='Website logo'
@@ -34,7 +34,7 @@ export default function TopBar({ user, signOut }) {
         />
       </div>
       <div>
-        <MenuListComposition user={user} signOut={signOut} />
+        <MenuPopupState user={user} signOut={signOut} />
       </div>
     </div>
   );
