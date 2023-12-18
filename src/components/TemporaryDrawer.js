@@ -16,7 +16,7 @@ import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 import { Divider } from '@mui/material';
 
-export default function TemporaryDrawer({ signOut }) {
+export default function TemporaryDrawer({ navigate, signOut }) {
   const [state, setState] = React.useState({
     left: false
   });
@@ -39,7 +39,7 @@ export default function TemporaryDrawer({ signOut }) {
       <List>
         {/* Item 1 */}
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={() => navigate('/home')}>
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
@@ -84,8 +84,8 @@ export default function TemporaryDrawer({ signOut }) {
         </ListItem>
         <Divider />
         {/* Sign out */}
-        <ListItem disablePadding onClick={signOut}>
-          <ListItemButton onClick={() => signOut}>
+        <ListItem disablePadding>
+          <ListItemButton onClick={() => signOut()}>
             <ListItemIcon>
               <PowerSettingsNewIcon />
             </ListItemIcon>

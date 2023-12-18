@@ -19,7 +19,7 @@ const HomePage = () => {
           flexDirection: 'column',
           height: '100vh'
         }}>
-          <TopBar user={user} signOut={signOut}/>
+          <TopBar />
           {/* Rest of the page*/}
           <div style={{
             display: 'flex',

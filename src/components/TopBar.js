@@ -1,8 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import TemporaryDrawer from './TemporaryDrawer';
 import MenuPopupState from './MenuPopupState';
+import { useAuthenticator } from '@aws-amplify/ui-react';
 
-export default function TopBar({ user, signOut }) {
+export default function TopBar() {
+  const { user, signOut } = useAuthenticator((context) => [context.user]);
+  let navigate = useNavigate()
+
   return (
     <div style={{
       display: 'flex',
@@ -25,7 +30,7 @@ export default function TopBar({ user, signOut }) {
         gap: '10px',
         alignItems: 'center'
       }}>
-        <TemporaryDrawer signOut={signOut}/>
+        <TemporaryDrawer navigate={navigate} signOut={signOut}/>
         <img
           src='/woodle-logo.png'
           alt='Website logo'
@@ -34,7 +39,7 @@ export default function TopBar({ user, signOut }) {
         />
       </div>
       <div>
-        <MenuPopupState user={user} signOut={signOut} />
+        <MenuPopupState navigate={navigate} user={user} signOut={signOut} />
       </div>
     </div>
   );

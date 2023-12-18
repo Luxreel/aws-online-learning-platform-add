@@ -1,13 +1,10 @@
 import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 
-export default function MenuPopupState({ user, signOut }) {
-  let navigate = useNavigate()
-
+export default function MenuPopupState({ navigate, user, signOut }) {
   function stringToColor(string) {
     let hash = 0;
     let i;
@@ -53,7 +50,7 @@ export default function MenuPopupState({ user, signOut }) {
           <Menu {...bindMenu(popupState)}>
             <MenuItem onClick={() => handleProfileClick(popupState)}>Profile</MenuItem>
             <MenuItem onClick={popupState.close}>My account</MenuItem>
-            <MenuItem onClick={signOut}>👋 Sign out</MenuItem>
+            <MenuItem onClick={() => signOut()}>👋 Sign out</MenuItem>
           </Menu>
         </React.Fragment>
       )}
