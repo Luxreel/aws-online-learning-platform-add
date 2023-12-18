@@ -45,12 +45,12 @@ const HomePage = () => {
               <img
                 src='/woodle-logo.png'
                 alt='Website logo'
-                height='16%'
-                width='16%'
+                height='20px'
+                width='110px'
               />
             </div>
             {/* Top bar - Right menu*/}
-            <MenuListComposition />
+            <MenuListComposition user={user}/>
           </div>
           {/* Rest of the page*/}
           <div style={{
