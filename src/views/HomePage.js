@@ -4,8 +4,7 @@ import { Authenticator, Button } from '@aws-amplify/ui-react';
 import awsExports from '../aws-exports'
 import '@aws-amplify/ui-react/styles.css'
 import MenuListComposition from '../components/MenuListComposition';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import TemporaryDrawer from '../components/TemporaryDrawer';
 
 Amplify.configure(awsExports)
 
@@ -27,7 +26,7 @@ const HomePage = () => {
             flexDirection: 'row',
             backgroundColor: 'white',
             height: 50,
-            paddingLeft: 5,
+            paddingLeft: 10,
             paddingRight: 10,
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -42,9 +41,7 @@ const HomePage = () => {
               gap: 10,
               alignItems: 'center'
             }}>
-              <IconButton color="primary" aria-label="toggle drawer">
-                <MenuIcon />
-              </IconButton>
+              <TemporaryDrawer></TemporaryDrawer>
               <img
                 src='/woodle-logo.png'
                 alt='Website logo'
