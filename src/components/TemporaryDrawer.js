@@ -48,7 +48,7 @@ export default function TemporaryDrawer({ navigate, signOut }) {
         </ListItem>
         {/* Item 2 */}
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={() => navigate('/notifs')}>
             <ListItemIcon>
               <NotificationsActiveIcon />
             </ListItemIcon>
@@ -57,7 +57,7 @@ export default function TemporaryDrawer({ navigate, signOut }) {
         </ListItem>
         {/* Item 3 */}
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={() => navigate('/courses')}>
             <ListItemIcon>
               <MenuBookIcon />
             </ListItemIcon>
@@ -66,7 +66,7 @@ export default function TemporaryDrawer({ navigate, signOut }) {
         </ListItem>
         {/* Item 4 */}
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={() => navigate('/forum')}>
             <ListItemIcon>
               <QuestionAnswerIcon />
             </ListItemIcon>
@@ -75,7 +75,7 @@ export default function TemporaryDrawer({ navigate, signOut }) {
         </ListItem>
         {/* Item 5 */}
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={() => navigate('/contact')}>
             <ListItemIcon>
               <PermContactCalendarIcon />
             </ListItemIcon>

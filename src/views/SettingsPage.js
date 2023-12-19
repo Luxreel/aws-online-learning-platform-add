@@ -1,7 +1,7 @@
 import React from 'react';
 import TopBar from '../components/TopBar';
 
-const ProfilePage = () => {
+const SettingsPage = () => {
   return (
     <div style={{
       display: 'flex',
@@ -19,10 +19,10 @@ const ProfilePage = () => {
             justifyContent: 'center',
             gap: 50,
       }}>
-        <h1>Work In Progress - Profile</h1>
+        <h1>Work In Progress - Settings</h1>
       </div>
     </div>
   );
 };
 
-export default ProfilePage;
+export default SettingsPage;

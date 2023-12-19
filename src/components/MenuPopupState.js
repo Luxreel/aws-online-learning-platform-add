@@ -33,10 +33,15 @@ export default function MenuPopupState({ navigate, user, signOut }) {
     };
   }
 
-  const handleProfileClick = (popupState) => {
+  const handleClickOnProfile = (popupState) => {
     popupState.close()
     navigate('/profile')
  }
+
+  const handleClickOnSettings = (popupState) => {
+    popupState.close()
+    navigate('/settings')
+  }
 
   return (
     <PopupState variant="popover" popupId="demo-popup-menu">
@@ -48,8 +53,8 @@ export default function MenuPopupState({ navigate, user, signOut }) {
             <Avatar {...stringAvatar(user.username)}/>
           </div>  
           <Menu {...bindMenu(popupState)}>
-            <MenuItem onClick={() => handleProfileClick(popupState)}>Profile</MenuItem>
-            <MenuItem onClick={popupState.close}>My account</MenuItem>
+            <MenuItem onClick={() => handleClickOnProfile(popupState)}>Profile</MenuItem>
+            <MenuItem onClick={() => handleClickOnSettings(popupState)}>Settings</MenuItem>
             <MenuItem onClick={() => signOut()}>👋 Sign out</MenuItem>
           </Menu>
         </React.Fragment>

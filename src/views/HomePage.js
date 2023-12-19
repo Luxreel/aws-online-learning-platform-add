@@ -1,13 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Amplify } from 'aws-amplify';
 import { Authenticator } from '@aws-amplify/ui-react';
 import awsExports from '../aws-exports'
 import '@aws-amplify/ui-react/styles.css'
 import TopBar from '../components/TopBar';
+import VideoPlayer from '../components/VideoPlayer';
 
 Amplify.configure(awsExports)
 
+const BACKEND_PORT = 3001;
+
 const HomePage = () => {
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(`http://localhost:${BACKEND_PORT}/`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.text();
+      setMessage(data);
+    } catch (error) {
+      console.error('Error:', error);
+      setMessage('Error fetching data');
+    }
+  };
+
   return (
     <Authenticator
       variation="modal"
@@ -30,6 +54,8 @@ const HomePage = () => {
             gap: 50,
           }}>
               <div style={{marginTop: 200, justifyContent: 'center'}}>Hello {user.username} (userId: {user.userId})!</div>
+              <div>{message}</div>
+              <VideoPlayer title='Embedded YouTube video' embedId={'spXdDP7J0TA'} />
           </div>
         </div>
       )}

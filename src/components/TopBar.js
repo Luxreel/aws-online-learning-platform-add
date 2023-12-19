@@ -8,6 +8,11 @@ export default function TopBar() {
   const { user, signOut } = useAuthenticator((context) => [context.user]);
   let navigate = useNavigate()
 
+  function handleClickOnLogo() {
+    navigate('/home');
+  }
+  
+
   return (
     <div style={{
       display: 'flex',
@@ -27,16 +32,23 @@ export default function TopBar() {
       <div style={{
         display: 'flex',
         flexDirection: 'row',
-        gap: '10px',
+        gap: 6,
         alignItems: 'center'
       }}>
         <TemporaryDrawer navigate={navigate} signOut={signOut}/>
+        <div style={{
+          fontSize: 23,
+          paddingBottom: 3
+        }}>📚</div>
         <img
           src='/woodle-logo.png'
           alt='Website logo'
-          height='20px'
-          width='110px'
+          height='18px'
+          width='95px'
+          onClick={handleClickOnLogo}
+          style={{ cursor: 'pointer' }}
         />
+        
       </div>
       <div>
         <MenuPopupState navigate={navigate} user={user} signOut={signOut} />
