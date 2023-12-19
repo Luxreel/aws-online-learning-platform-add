@@ -11,7 +11,6 @@ export default function TopBar() {
   function handleClickOnLogo() {
     navigate('/home');
   }
-  
 
   return (
     <div style={{
