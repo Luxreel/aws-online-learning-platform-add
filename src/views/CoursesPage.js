@@ -1,6 +1,8 @@
 import React from 'react';
 import TopBar from '../components/TopBar';
 
+import CourseCard from '../components/CourseCard';
+
 const CoursesPage = () => {
   return (
     <div style={{
@@ -19,7 +21,7 @@ const CoursesPage = () => {
             justifyContent: 'center',
             gap: 50,
       }}>
-        <h1>Work In Progress - Courses</h1>
+        <CourseCard />
       </div>
     </div>
   );
