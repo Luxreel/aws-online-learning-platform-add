@@ -3,13 +3,14 @@ import { useLocation } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import VideoPlayer from '../components/VideoPlayer'
 import { BACKEND_PORT } from '../constants/apiRoutes';
-import { Skeleton } from '@mui/material';
+import { Pagination, Skeleton } from '@mui/material';
 
 const CoursePage = () => {
-  const [courses, setCourses] = useState({
+  const [courses, setCourses] = useState([{
     title: 'Loading...',
     youtubeEmbedId: 'initial-id'
-  });
+  }]);
+  const [page, setPage] = useState(1)
   const [loading, setLoading] = useState(true);
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
@@ -31,6 +32,10 @@ const CoursePage = () => {
     fetchData();
   }, [courseName]);
 
+  const handleChange = (_, value) => {
+    setPage(value);
+  };
+
   return (
     <div style={{
       display: 'flex',
@@ -48,8 +53,17 @@ const CoursePage = () => {
             justifyContent: 'center',
             gap: 50,
       }}>
-        {loading ? <Skeleton variant="rectangular" width={210} height={118} />
-        : <VideoPlayer title={courses[0].title} embedId={courses[0].youtubeEmbedId} />}
+        {loading ? <Skeleton variant="rectangular" width={672} height={378} />
+        : 
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 50
+        }}>
+          <VideoPlayer title={courses[page - 1].title} embedId={courses[page - 1].youtubeEmbedId} />
+          <Pagination count={courses.length} page={page} onChange={handleChange} color="secondary" />
+        </div>}
       </div>
     </div>
   );

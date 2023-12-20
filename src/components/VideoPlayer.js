@@ -6,8 +6,8 @@ export default function VideoPlayer({ title, embedId }) {
     <div className="video-responsive">
       <h1>{title}</h1>
       <iframe
-        width='560'
-        height='315'
+        width='672'
+        height='378'
         src={`https://www.youtube.com/embed/${embedId}`}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
