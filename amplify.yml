@@ -7,7 +7,7 @@ frontend:
         - npm install react-scripts
     build:
       commands:
-        - CLUSTER_IP=${CLUSTER_IP}
+        - echo "CLUSTER_IP=$CLUSTER_IP" >> .env
         - npm run build
   artifacts:
     baseDirectory: build
