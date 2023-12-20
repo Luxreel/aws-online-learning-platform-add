@@ -25,7 +25,7 @@ const NotificationsPage = () => {
         paddingRight: 70,
         gap: 20
       }}>
-        <h1>Notifications</h1>
+        <h1>🔔 Notifications</h1>
         <Alert severity="success">You have successfully completed the Python course!</Alert>
         <Alert severity="error">Please fill in your missing information on your profile.</Alert>
         <Alert severity="warning">You have an Excel assignment due on the 21th of December.</Alert>

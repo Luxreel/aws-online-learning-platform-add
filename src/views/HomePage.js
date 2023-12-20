@@ -49,10 +49,11 @@ const HomePage = () => {
             backgroundColor: 'white',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: 50,
+            paddingTop: 200
           }}>
-              <div style={{marginTop: 200, justifyContent: 'center'}}>Hello {user.username} (userId: {user.userId})!</div>
-              <div>{message}</div>
+              <h1>👋 Hello {user.username}!</h1>
+              <p>(userId: {user.userId})!</p>
+              <p>{message}</p>
           </div>
         </div>
       )}

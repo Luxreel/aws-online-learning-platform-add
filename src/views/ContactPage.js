@@ -73,13 +73,13 @@ const ContactPage = () => {
             flex: 1,
             backgroundColor: 'white',
             flexDirection: 'column',
-            alignItems: 'center',
             justifyContent: 'center',
-            gap: 50,
+            gap: 40,
             paddingLeft: 150,
             paddingRight: 150
       }}>
-        <Box sx={{ height: 400, width: '100%' }}>
+        <h1>📧 Contact</h1>
+        <Box sx={{ height: 400, width: '100%', alignItems: 'center' }}>
           <DataGrid
             rows={rows}
             columns={columns}
