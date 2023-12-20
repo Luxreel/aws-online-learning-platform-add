@@ -7,6 +7,7 @@ frontend:
         - npm install react-scripts
     build:
       commands:
+        - CLUSTER_IP=${CLUSTER_IP}
         - npm run build
   artifacts:
     baseDirectory: build
