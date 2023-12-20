@@ -59,7 +59,10 @@ const CoursePage = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: 50
+          gap: 50,
+          padding: 40,
+          borderRadius: 15,
+          boxShadow: 'blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px, rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px, rgb(255, 85, 85) 40px -40px'
         }}>
           <VideoPlayer title={courses[page - 1].title} embedId={courses[page - 1].youtubeEmbedId} />
           <Pagination count={courses.length} page={page} onChange={handleChange} color="secondary" />

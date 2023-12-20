@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export default function VideoPlayer({ title, embedId }) {
   return (
     <div className="video-responsive">
-      <h1>{title}</h1>
+      <h2>{title}</h2>
       <iframe
         width='672'
         height='378'
