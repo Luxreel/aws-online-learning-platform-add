@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import VideoPlayer from '../components/VideoPlayer'
-import { BACKEND_PORT } from '../constants/apiRoutes';
+import { BACKEND_PORT, CLUSTER_IP } from '../constants/apiRoutes';
 import { Pagination, Skeleton } from '@mui/material';
 
 const CoursePage = () => {
@@ -19,7 +19,7 @@ const CoursePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://${process.env.CLUSTER_IP}:${BACKEND_PORT}/${courseName}`)
+        const response = await fetch(`http://${CLUSTER_IP}:${BACKEND_PORT}/${courseName}`)
         const jsonResp = await response.json();
         setCourses(jsonResp);
         setLoading(false);
