@@ -5,7 +5,8 @@ import HomePage from './views/HomePage';
 import ProfilePage from './views/ProfilePage';
 import SettingsPage from './views/SettingsPage';
 import NotificationsPage from './views/NotificationsPage';
-import CoursesPage from './views/CoursesPage';
+import CoursesCatalogPage from './views/CoursesCatalogPage';
+import CoursePage from './views/CoursePage';
 import ForumPage from './views/ForumPage';
 import ContactPage from './views/ContactPage';
 import { Authenticator } from '@aws-amplify/ui-react';
@@ -20,7 +21,8 @@ const App = () => {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/notifs" element={<NotificationsPage />} />
-          <Route path="/courses" element={<CoursesPage />} />
+          <Route path="/courses" element={<CoursesCatalogPage />} />
+          <Route path="/courses/details" element={<CoursePage />} />
           <Route path="/forum" element={<ForumPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>

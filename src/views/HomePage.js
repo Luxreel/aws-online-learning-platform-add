@@ -5,10 +5,9 @@ import awsExports from '../aws-exports'
 import '@aws-amplify/ui-react/styles.css'
 import TopBar from '../components/TopBar';
 import VideoPlayer from '../components/VideoPlayer';
+import { BACKEND_PORT } from '../constants/apiRoutes';
 
 Amplify.configure(awsExports)
-
-const BACKEND_PORT = 3001;
 
 const HomePage = () => {
   const [message, setMessage] = useState('');
