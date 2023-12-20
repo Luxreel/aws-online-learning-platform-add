@@ -19,7 +19,7 @@ const SettingsPage = () => {
             justifyContent: 'center',
             gap: 50,
       }}>
-        <h1>Work In Progress - Settings</h1>
+        <h1>🚧 Work In Progress - Settings</h1>
       </div>
     </div>
   );

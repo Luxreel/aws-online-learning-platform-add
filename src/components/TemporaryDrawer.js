@@ -16,7 +16,7 @@ import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 import { Divider } from '@mui/material';
 
-export default function TemporaryDrawer({ navigate, signOut }) {
+export default function TemporaryDrawer({ navigate, user, signOut }) {
   const [state, setState] = React.useState({
     left: false
   });

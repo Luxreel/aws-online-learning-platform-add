@@ -34,7 +34,7 @@ export default function TopBar() {
         gap: 6,
         alignItems: 'center'
       }}>
-        <TemporaryDrawer navigate={navigate} signOut={signOut}/>
+        <TemporaryDrawer navigate={navigate} user={user} signOut={signOut}/>
         <div style={{
           fontSize: 23,
           paddingBottom: 3

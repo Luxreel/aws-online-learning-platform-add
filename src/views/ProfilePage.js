@@ -19,7 +19,7 @@ const ProfilePage = () => {
             justifyContent: 'center',
             gap: 50,
       }}>
-        <h1>Work In Progress - Profile</h1>
+        <h1>🚧 Work In Progress - Profile</h1>
       </div>
     </div>
   );
