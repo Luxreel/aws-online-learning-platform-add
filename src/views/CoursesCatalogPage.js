@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import TopBar from '../components/TopBar';
 import CourseCard from '../components/CourseCard';
 

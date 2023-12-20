@@ -4,7 +4,6 @@ import { Authenticator } from '@aws-amplify/ui-react';
 import awsExports from '../aws-exports'
 import '@aws-amplify/ui-react/styles.css'
 import TopBar from '../components/TopBar';
-import VideoPlayer from '../components/VideoPlayer';
 import { BACKEND_PORT } from '../constants/apiRoutes';
 
 Amplify.configure(awsExports)
@@ -54,7 +53,6 @@ const HomePage = () => {
           }}>
               <div style={{marginTop: 200, justifyContent: 'center'}}>Hello {user.username} (userId: {user.userId})!</div>
               <div>{message}</div>
-              <VideoPlayer title='Embedded YouTube video' embedId={'spXdDP7J0TA'} />
           </div>
         </div>
       )}
