@@ -4,7 +4,7 @@ import { Authenticator } from '@aws-amplify/ui-react';
 import awsExports from '../aws-exports'
 import '@aws-amplify/ui-react/styles.css'
 import TopBar from '../components/TopBar';
-import { BACKEND_PORT, CLUSTER_IP } from '../constants/apiRoutes';
+import { BACKEND_URI } from '../constants/apiRoutes';
 
 Amplify.configure(awsExports)
 
@@ -17,7 +17,7 @@ const HomePage = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`https://cors-anywhere.herokuapp.com/http://${CLUSTER_IP}:${BACKEND_PORT}/`);
+      const response = await fetch(`${BACKEND_URI}`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import VideoPlayer from '../components/VideoPlayer'
-import { BACKEND_PORT, CLUSTER_IP } from '../constants/apiRoutes';
+import { BACKEND_URI } from '../constants/apiRoutes';
 import { Pagination, Skeleton } from '@mui/material';
 
 const CoursePage = () => {
@@ -19,7 +19,7 @@ const CoursePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://cors-anywhere.herokuapp.com/http://${CLUSTER_IP}:${BACKEND_PORT}/${courseName}`)
+        const response = await fetch(`${BACKEND_URI}${courseName}`)
         const jsonResp = await response.json();
         setCourses(jsonResp);
         setLoading(false);
@@ -35,7 +35,6 @@ const CoursePage = () => {
   const handleChange = (_, value) => {
     setPage(value);
   };
-  console.log('data:', courses)
 
   return (
     <div style={{

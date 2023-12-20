@@ -1,6 +1,4 @@
-export const CLUSTER_IP = '34.163.80.26';
-
-export const BACKEND_PORT = 3001;
+export const BACKEND_URI = process.env.BACKEND_URI || 'http://localhost:3000/';
 
 export const apiRoutes = {
   'Python': 'python',
