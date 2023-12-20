@@ -17,7 +17,7 @@ const HomePage = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`http://${CLUSTER_IP}:${BACKEND_PORT}/`);
+      const response = await fetch(`https://cors-anywhere.herokuapp.com/http://${CLUSTER_IP}:${BACKEND_PORT}/`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }

@@ -19,7 +19,7 @@ const CoursePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://${CLUSTER_IP}:${BACKEND_PORT}/${courseName}`)
+        const response = await fetch(`https://cors-anywhere.herokuapp.com/http://${CLUSTER_IP}:${BACKEND_PORT}/${courseName}`)
         const jsonResp = await response.json();
         setCourses(jsonResp);
         setLoading(false);
