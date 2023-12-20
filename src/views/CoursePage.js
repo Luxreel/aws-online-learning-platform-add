@@ -19,7 +19,7 @@ const CoursePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:${BACKEND_PORT}/${courseName}`)
+        const response = await fetch(`http://${process.env.CLUSTER_IP}:${BACKEND_PORT}/${courseName}`)
         const jsonResp = await response.json();
         setCourses(jsonResp);
         setLoading(false);
@@ -35,6 +35,7 @@ const CoursePage = () => {
   const handleChange = (_, value) => {
     setPage(value);
   };
+  console.log('data:', courses)
 
   return (
     <div style={{

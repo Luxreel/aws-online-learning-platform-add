@@ -17,7 +17,7 @@ const HomePage = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`http://localhost:${BACKEND_PORT}/`);
+      const response = await fetch(`http://${process.env.CLUSTER_IP}:${BACKEND_PORT}/`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
